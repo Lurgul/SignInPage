@@ -1,0 +1,194 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+
+}
+body{
+height: 100vh;
+background-size:cover;
+background-position: center;
+overflow: hidden;
+background-image: url("cybercity.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.box{
+    position:relative;
+    width: 380px;
+    height: 380px;
+    background-color: #1c1c1c89;
+    border-radius: 8px;
+    overflow:hidden;
+}
+
+.box::before{
+        content:'';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 420px;
+        background: linear-gradient(0deg,transparent,
+        transparent,#45f3ff, #45f3ff,#45f3ff);
+        z-index: 1;
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+}
+.box::after{
+    content:'';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,
+    transparent,#6014da, #6014da,#6014da);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+.borderline{
+    position: absolute;
+    top:0;
+    inset: 0;
+}
+
+.borderline::before{ 
+    content:'';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,
+    transparent,#ff45e9, #ff45e9,#ff45e9);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.borderline::after{ 
+    content:'';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,
+    transparent,#daff45, #daff45,#daff45);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes animate 
+{   
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+
+}
+
+h2{
+    display: flex;
+    margin-bottom: 10%;
+    color: aliceblue;
+    font-weight: 500;
+    justify-content: center;
+    letter-spacing: 0.125em;
+}
+
+.box form{
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.box form .login input{
+    
+    position: relative;
+    width: 100%;
+    padding: 20px 0px 10px ;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    z-index: 10;
+    letter-spacing: 0.05em;
+    font-size: 1em;
+    color: #fff;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.box form .login span{
+    position: absolute;
+    left:0;
+    margin-left: 60px;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.box form .login input:valid ~ span,
+.box form .login input:focus ~ span
+{
+    color : rgb(255, 255, 255);
+    font-size: 0.75em;
+    transform: translateY(-20px);
+
+}
+
+.box form .login input:valid ~ span,
+.box form .login input:focus ~ span
+{
+    position: absolute;
+    left:0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: #fff;
+
+}
+.box form .links{
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #fff;
+}
+
+input[type=submit] 
+{
+
+    border:none;
+    outline:none;
+    padding: 9px 10px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100px;
+
+}
+input[type=submit]:active
+{
+    opacity: 0.8;
+}
